@@ -1,0 +1,20 @@
+ <!-- Content for Homepage tab -->
+                <h2>Introducing Our Cutting-Edge Solar Solution: Harness Clean, Renewable Energy</h2>
+                <p>Welcome to our website, where we are proud to present our revolutionary solar product that promises to transform the way you power your home or business. With a relentless commitment to sustainability and innovation, we have developed a state-of-the-art solar solution that maximizes energy efficiency and minimizes environmental impact.</p>
+
+                <!-- Add an image here -->
+                <img src="/_images/PanelsOnRoof.jpg" alt="Solar Panel Installation">
+
+                <h3>Key Features and Benefits:</h3>
+                <ul>
+                    <li>Unparalleled Energy Efficiency</li>
+                    <li>Seamless Integration</li>
+                    <li>Enhanced Durability</li>
+                    <li>Environmental Stewardship</li>
+                    <li>Cost Savings and Incentives</li>
+                    <li>Comprehensive Support and Monitoring</li>
+                </ul>
+                
+                <img src="/_images/House.jpg" alt="Solar Panel Installation">
+                <p>Join the Solar Revolution Today! Embrace the power of the sun and unlock the countless benefits of solar energy with our cutting-edge solar solution. Together, let's create a brighter, cleaner, and more sustainable future for generations to come. Contact us now to learn more about how our solar product can revolutionize your energy consumption and make a positive impact on the environment.</p>
+                <img src="/_images/add.jpg" alt="Solar Panel Installation">

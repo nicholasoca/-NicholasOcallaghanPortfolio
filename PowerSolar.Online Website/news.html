@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="_StylesSheet/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerSolar.Online</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="_images/Logo.png" alt="Header Image" class="header-image" width="500">
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="HomePage.html">Homepage</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Products_services.html">Products and Services</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="https://www.facebook.com/powersolar.online" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook">Facebook</i></a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>News</h2>
+            <p>Stay up to date with our latest news and updates. Subscribe to our newsletter to receive monthly updates straight to your inbox.</p>
+
+            <!-- Newsletter Subscription Form -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegqvCDnEWjWnuH5BejenQ-a-8FqvnLrzVy72ZYyfF_C8LVHg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+            <!-- Add more news articles here -->
+            <h2 class="article-title">News Article</h2>
+            <embed src="_news/Solar.pdf" type="application/pdf" width="100%" height="500px">
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2023 PowerSolar.Online. All rights reserved.</p>
+            
+        </footer>
+    </div>
+
+
+        <script>
+            window.onload = function() {
+                // Fetch the text file
+                fetch('/_TextFiles/News.txt')
+                    .then(response => response.text())
+                    .then(text => {
+                        // Manipulate the HTML DOM to insert the text
+                        var textContainer = document.getElementById('text');
+                        textContainer.innerHTML = text;
+                    })
+                    .catch(error => console.log(error));
+            };
+        </script>
+        
+        <div id="text"></div>
+    </div>
+</body>
+
+</html>

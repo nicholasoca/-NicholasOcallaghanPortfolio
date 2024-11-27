@@ -1,0 +1,22 @@
+ <!-- Content for Products and Services tab -->
+                <h2>Products and Services</h2>
+                <h3>Solar Panel Installation</h3>
+                <p>We offer professional and efficient solar panel installation services for residential, commercial, and industrial properties. Our team of certified technicians will handle the entire installation process, ensuring a seamless integration of solar panels onto your roof or property.</p>
+
+                <h3>Customized Solar System Design</h3>
+                <p>Every property is unique, and we understand the importance of tailoring a solar system to your specific energy needs. Our experienced engineers will work closely with you to design a customized solar solution that maximizes energy production and fits seamlessly into your property's architecture.</p>
+
+                <h3>Products</h3>
+                <p>Us here at PowerSolar.Online believe that the product we use to prevent power outages is the best product on the market. </p>
+
+
+                    <!-- Brochure -->
+                    <p>The following is the products we use:</p>
+                    
+                    <embed src="/_bochures/Sunsynk.pdf" type="application/pdf" width="100%" height="500px">
+
+                    <embed src="/_bochures/Lux.pdf" type="application/pdf" width="100%" height="500px">
+
+                    <embed src="/_bochures/Deye.pdf" type="application/pdf" width="100%" height="500px">
+
+                    <embed src="/_bochures/CanadianSolar.pdf" type="application/pdf" width="100%" height="500px">

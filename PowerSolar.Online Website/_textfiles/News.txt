@@ -1,0 +1,9 @@
+<h2>News</h2>
+<p>Stay up to date with our latest news and updates. Subscribe to our newsletter to receive monthly updates straight to your inbox.</p>
+
+<!-- Newsletter Subscription Form -->
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSegqvCDnEWjWnuH5BejenQ-a-8FqvnLrzVy72ZYyfF_C8LVHg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<!-- Add more news articles here -->
+<h2 class="article-title">News Article</h2>
+<embed src="/_news/Solar.pdf" type="application/pdf" width="100%" height="500px">
