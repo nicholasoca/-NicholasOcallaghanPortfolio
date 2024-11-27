@@ -1,0 +1,126 @@
+﻿<Window x:Class="Payroll_Appplication.RegisterPage"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Payroll_Appplication"
+        mc:Ignorable="d"
+        Title="Login" 
+        Width="1920"  
+Height="1080"
+        Background="LightYellow"
+        WindowState="Maximized">
+
+    <Grid>
+        <!-- Top section for heading -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/9496184.png" Margin="516,68,0,-57" Grid.RowSpan="2"/>
+
+        <Border Grid.Row="0" Background="#42ab49" Height="100">
+            <StackPanel>
+                <TextBlock Text="Welcome" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold" Foreground="White">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="5" Opacity="0.5"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+        </Border>
+
+        <!-- Section heading -->
+        <TextBlock Text="Please Register an account, an admin will review your account and set log in permissions" HorizontalAlignment="Center" Margin="0,228,0,586" Foreground="Black" FontSize="30" Grid.Row="1">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <!-- Section with Username and Password -->
+        <Border Grid.Row="1" Background="#c9cba3" Margin="953,334,653,155" CornerRadius="0,10,10,0">
+            <Border.Effect>
+                <DropShadowEffect Color="Gray" Direction="320" ShadowDepth="5" Opacity="0.5"/>
+            </Border.Effect>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Username -->
+                <TextBlock Text="Username" FontSize="18" FontWeight="Bold" Margin="0,5,0,5"/>
+                <TextBox x:Name="txtUsername" Grid.Row="0" Text="" VerticalAlignment="Top" FontSize="16" Padding="5" Margin="0,37,0,0"/>
+
+                <!-- Password -->
+                <TextBlock Text="Password" FontSize="18" FontWeight="Bold" Margin="0,83,0,28"/>
+                <PasswordBox x:Name="txtPassword" Grid.Row="1" VerticalAlignment="Top" FontSize="16" Padding="5" Margin="0,54,0,0"/>
+
+                <TextBlock Text="Confirm Password" FontSize="18" FontWeight="Bold" Margin="0,25,0,193" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <PasswordBox x:Name="txtConfirmPassword" VerticalAlignment="Top" FontSize="16" Padding="5" Margin="0,112,0,0"/>
+
+                <Button Content="Register" HorizontalAlignment="Center" Margin="0,121,0,0" Width="150" Height="40" VerticalAlignment="Top" Grid.Row="1" Click="RegisterButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Black"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#414346"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Content="Back to Login" HorizontalAlignment="Center" Margin="0,171,0,0" Width="150" Height="40" VerticalAlignment="Top" Grid.Row="1" Click="Login_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Black"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#414346"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Background="#c9cba3" Margin="646,334,960,155" CornerRadius="10,0,0,10">
+            <Border.Effect>
+                <DropShadowEffect Color="Gray" Direction="230" ShadowDepth="5" Opacity="0.5"/>
+            </Border.Effect>
+            <Image Source="/My first design (1).png" Margin="0,0,0,16"/>
+        </Border>
+    </Grid>
+</Window>

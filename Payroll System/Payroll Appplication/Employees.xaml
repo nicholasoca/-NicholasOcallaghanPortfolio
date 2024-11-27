@@ -1,0 +1,352 @@
+﻿<Window x:Class="Payroll_Appplication.Employees"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Payroll_Appplication"
+        mc:Ignorable="d"
+        Title="Payroll" 
+        Width="1920"  
+Height="1080"
+        Background="LightYellow"
+        WindowState="Maximized">
+
+    <Window.Resources>
+        <!-- Define the storyboard for retracting the navigation panel -->
+        <Storyboard x:Key="RetractNavigationStoryboard">
+            <DoubleAnimation Storyboard.TargetName="NavigationPanel" 
+                             Storyboard.TargetProperty="Width"
+                             To="50" Duration="0:0:0.3"/>
+        </Storyboard>
+
+        <!-- Define the storyboard for restoring the navigation panel -->
+        <Storyboard x:Key="RestoreNavigationStoryboard">
+            <DoubleAnimation Storyboard.TargetName="NavigationPanel" 
+                             Storyboard.TargetProperty="Width"
+                             To="150" Duration="0:0:0.3"/>
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Top section for heading -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Heading section -->
+        <Border Grid.Row="0" Background="#42ab49" Height="100">
+            <Grid>
+                <!-- Logo image -->
+
+                <!-- Heading text -->
+                <TextBlock Text="Employees" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold" Foreground="White" Margin="70,0,0,0">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="320" ShadowDepth="5" Opacity="0.5"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <Grid HorizontalAlignment="Left" Height="NaN">
+                    <Image Source="/bergvallei-payroll-high-resolution-logo-white-transparent.png" Margin="37,6,37,10" Height="84"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Main content section -->
+        <Border Grid.Row="1" Background="LightYellow">
+            <!-- Main content section -->
+            <Grid>
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+                <TextBlock HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Margin="168,20,0,445"><Run Text="Employee"/><Run Language="en-za" Text=" Payment"/><Run Text=" Details"/></TextBlock>
+                <ListView x:Name="EmployeeListView" Margin="366,143,218,550" BorderBrush="#414346" BorderThickness="5" Background="White">
+                    <ListView.Resources>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="FontSize" Value="16"/>
+                        </Style>
+                    </ListView.Resources>
+                    <ListView.View>
+                        <GridView>
+                            <!-- Columns -->
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="Background" Value="#414346"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontSize" Value="18"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                                                <Grid>
+                                                    <Border Background="{TemplateBinding Background}" 
+                                            BorderBrush="{TemplateBinding BorderBrush}" 
+                                            BorderThickness="{TemplateBinding BorderThickness}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+
+                            <!-- Define each GridViewColumn with a Border to create vertical lines -->
+                            <GridViewColumn Header="Employee" DisplayMemberBinding="{Binding EmployeeName}" Width="145"/>
+                            <GridViewColumn Header="Employee No" DisplayMemberBinding="{Binding EmployeeNo}" Width="145"/>
+                            <GridViewColumn Header="Work Hours" DisplayMemberBinding="{Binding WorkHours}" Width="145"/>
+                            <GridViewColumn Header="Overtime Hours" DisplayMemberBinding="{Binding OvertimeHours}" Width="145"/>
+                            <GridViewColumn Header="Gross Pay" DisplayMemberBinding="{Binding GrossPay}" Width="145"/>
+                            <GridViewColumn Header="Statutory Pay" DisplayMemberBinding="{Binding StatutoryPay}" Width="145"/>
+                            <GridViewColumn Header="Deductions" DisplayMemberBinding="{Binding Deductions}" Width="145"/>
+                            <GridViewColumn Header="Net Salary" DisplayMemberBinding="{Binding NetSalary}" Width="145"/>
+                            <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="145"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <ListView x:Name="EmployeeContactView" Margin="656,576,508,102" BorderBrush="#414346" BorderThickness="5" Background="White">
+                    <ListView.Resources>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="FontSize" Value="16"/>
+                        </Style>
+                    </ListView.Resources>
+                    <ListView.View>
+                        <GridView>
+                            <!-- Columns -->
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="Background" Value="#414346"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontSize" Value="18"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                                                <Grid>
+                                                    <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+
+                            <!-- Define each GridViewColumn with a Border to create vertical lines -->
+                            <GridViewColumn Header="Employee" DisplayMemberBinding="{Binding EmployeeName}" Width="145"/>
+                            <GridViewColumn Header="Employee No" DisplayMemberBinding="{Binding EmployeeNo}" Width="145"/>
+                            <GridViewColumn Header="Phone Number" DisplayMemberBinding="{Binding PhoneNumber}" Width="145"/>
+                            <GridViewColumn Header="Email Address" DisplayMemberBinding="{Binding EmailAddress}" Width="145"/>
+                            <GridViewColumn Header="Marital Status" DisplayMemberBinding="{Binding MaritalStatus}" Width="145"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TextBlock HorizontalAlignment="Left" FontSize="30" FontWeight="Bold" Margin="168,442,0,23"><Run Text="Employee "/><Run Language="en-za" Text="Contact "/><Run Text="Details"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="232,67,0,0"><Run Language="en-za" Text="Search"/><Run Text=" by employee"/><Run Text=" n"/><Run Text="umber"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
+                <ComboBox x:Name="cmbEmployeeNum" Grid.Row="0" FontSize="16" Padding="5" Width="208" Height="35" HorizontalAlignment="Left" SelectionChanged="cmbEmployeeNum_SelectionChanged" Margin="484,-750,0,0" />
+                <Button Content="Clear Filter" HorizontalAlignment="Left" Margin="724,0,0,750" Width="150" Height="45" Click="ClearFilter_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Black"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#414346"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="237,489,0,0" Width="236"><Run Language="en-za" Text="Search"/><Run Text=" by employee"/><Run Text=" n"/><Run Text="umber"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
+                <ComboBox x:Name="cmbEmployeeNum2" Grid.Row="0" FontSize="16" Padding="5" Width="208" Height="35" HorizontalAlignment="Left" SelectionChanged="cmbEmployeeNum2_SelectionChanged" Margin="484,100,0,0" />
+                <Button Content="Clear Filter" HorizontalAlignment="Left" Margin="724,0,0,-100" Width="150" Height="45" Click="ClearFilter2_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Black"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#414346"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+            </Grid>
+
+
+        </Border>
+
+
+        <!-- Left section for navigation -->
+        <Border x:Name="NavigationPanel" Grid.Row="1" Background="#80c783" Width="150" HorizontalAlignment="Left">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="DashboardTitle" Text="Dashboard" HorizontalAlignment="Center"  Margin="0,10,0,571" Foreground="White" FontSize="15" FontWeight="Bold">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenDashboardCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+                <TextBlock x:Name="EmployeesTitle" Text="Employees" HorizontalAlignment="Center"  Margin="0,50,0,483" Foreground="White" FontSize="15" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenEmployeesCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+                <TextBlock x:Name="StatisticsTitle" Text="Statistics" HorizontalAlignment="Center"  Margin="0,100,0,483" Foreground="White" FontSize="15">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenStatisticsCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+
+
+                <TextBlock x:Name="EditTitle" Text="Edit Employees" HorizontalAlignment="Center"  Margin="0,150,0,426" Foreground="White" FontSize="15" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenEditCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+                <TextBlock x:Name="ProcessPayroll" Text="Payroll Handling" HorizontalAlignment="Center"  Margin="0,200,0,398" Foreground="White" FontSize="15" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenPayrollHandlingCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+                <TextBlock x:Name="Register" Text="Register" HorizontalAlignment="Center"  Margin="0,250,0,398" Foreground="White" FontSize="15" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenRegisterCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+                <TextBlock x:Name="Profile" Text="Profile" HorizontalAlignment="Center"  Margin="0,300,0,398" Foreground="White" FontSize="15" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenProfileCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+                <TextBlock x:Name="LoginTitle" Text="Logout" HorizontalAlignment="Center" Margin="0,350,0,426" Foreground="White" Cursor="Hand">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="FontSize" Value="15"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetracted}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    <TextBlock.InputBindings>
+                        <MouseBinding MouseAction="LeftClick" Command="{Binding OpenLoginCommand}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+
+
+                <Button Content="Retract" Click="RetractButton_Click" HorizontalAlignment="Center" Grid.Row="1" Margin="0,10,0,10"/>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>
