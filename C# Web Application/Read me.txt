@@ -1,0 +1,19 @@
+Class Library:
+
+Open the solution in Visual Studio.
+Build the User_Registration class library project.
+Web Application:
+
+Open the User_Registration_WebApp solution in Visual Studio.
+Build the solution.
+Running the Software:
+Web Application:
+Set User_Registration_WebApp as the startup project.
+Run the application (F5).
+Database Setup:
+Create Database:
+
+Execute the UserRegistrationDB.sql script to create the UserRegistrationDB database.
+Stored Procedures:
+
+Execute the UserAddOrEdit and UserViewByID stored procedures in the database.

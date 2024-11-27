@@ -1,0 +1,97 @@
+Database code
+
+-- Create the "" database
+CREATE DATABASE UserRegistrationDB;
+GO
+
+-- Use the "UserRegistrationDB" database
+USE ;
+GO
+
+
+
+CREATE TABLE UserRegistrationDB (
+    UserID INT,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Contact VARCHAR(50) NOT NULL,
+    Gender VARCHAR(10) NOT NULL,
+    Address VARCHAR(250) NOT NULL,
+    Username VARCHAR(50) NOT NULL,
+    Password VARCHAR(50) NOT NULL
+);
+
+
+
+Procedures
+
+USE [UserRegistrationDB]
+GO
+/****** Object:  StoredProcedure [dbo].[UserAddOrEdit]    Script Date: 2023/11/30 16:26:49 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROC [dbo].[UserAddOrEdit]
+@UserID  int,
+@FirstName varchar(50),
+@LastName varchar(50),
+@Contact varchar(50),
+@Gender varchar(10),
+@Address varchar(250),
+@UserName varchar(50),
+@Password  varchar(50)
+AS
+	IF  @UserID = 0
+	BEGIN
+		Insert INTO UserRegistrationDB (FirstName, LastName, Contact, Gender, UserName, Address, Password)
+		VALUES (@FirstName, @LastName, @Contact, @Gender, @UserName, @Address, @Password)
+	END
+	ELSE
+	BEGIN
+		UPDATE UserRegistration
+		SET
+		 FirstName = @FirstName,
+		 LastName = @LastName,
+		 Contact =  @Contact,
+		 Gender  = @Gender,
+		 UserName = @UserName,
+		 Address = @Address,
+		 Password = @Password
+	  WHERE UserID  = @UserID
+	END
+
+
+
+Procedure
+
+USE [UserRegistrationDB]
+GO
+/****** Object:  StoredProcedure [dbo].[UserViewByID]    Script Date: 2023/11/30 16:27:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROC [dbo].[UserViewByID]
+@UserID int
+AS
+	SELECT *
+	FROM UserRegistration
+	WHERE UserID = @UserID
+
+
+
+
+CREATE TABLE ModuleDetails (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    ModuleCode NVARCHAR(255) NOT NULL,
+    ModuleName NVARCHAR(255) NOT NULL,
+    ModuleCredit INT NOT NULL,
+    ClassHoursPerWeek INT NOT NULL,
+    NumberOfWeeks INT NOT NULL,
+    StartDate DATE NOT NULL,
+    NumberOfHoursWorked INT NOT NULL,
+    DateWorked DATE NOT NULL,
+    UserID INT NOT NULL
+);
+

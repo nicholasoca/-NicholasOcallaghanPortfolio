@@ -1,0 +1,18 @@
+F:\Youtube Channel\Dotnet Mob\asp.net tutorial\user registration\project\User Registration\User Registration\bin\User Registration.dll.config
+F:\Youtube Channel\Dotnet Mob\asp.net tutorial\user registration\project\User Registration\User Registration\bin\User Registration.dll
+F:\Youtube Channel\Dotnet Mob\asp.net tutorial\user registration\project\User Registration\User Registration\bin\User Registration.pdb
+F:\Youtube Channel\Dotnet Mob\asp.net tutorial\user registration\project\User Registration\User Registration\obj\Debug\User Registration.csprojResolveAssemblyReference.cache
+F:\Youtube Channel\Dotnet Mob\asp.net tutorial\user registration\project\User Registration\User Registration\obj\Debug\User Registration.dll
+F:\Youtube Channel\Dotnet Mob\asp.net tutorial\user registration\project\User Registration\User Registration\obj\Debug\User Registration.pdb
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\bin\User Registration.dll.config
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\bin\User Registration.dll
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\bin\User Registration.pdb
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\obj\Debug\User Registration.csproj.AssemblyReference.cache
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\obj\Debug\User Registration.csproj.CoreCompileInputs.cache
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\obj\Debug\User Registration.dll
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\obj\Debug\User Registration.pdb
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\bin\BCrypt.Net.dll
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\bin\BCrypt.Net.xml
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\obj\Debug\User Registration.csproj.CopyComplete
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\bin\Newtonsoft.Json.dll
+C:\Users\nicho\Downloads\C# Asp.Net User Registration\User Registration\User Registration\bin\Newtonsoft.Json.xml
