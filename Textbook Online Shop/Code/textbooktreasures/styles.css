@@ -1,0 +1,398 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #ddd;
+}
+
+header img {
+    height: 50px;
+}
+
+#web-title {
+    margin-left: 10px;
+}
+
+.header-buttons button {
+    margin-left: 15px;
+}
+
+nav {
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+li {
+    flex-grow: 1;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #34495e;
+}
+
+#auth-links {
+    display: flex;
+    align-items: center;
+}
+
+#auth-links a {
+    font-size: 14px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cta-buttons {
+    text-align: center;
+}
+
+.buy-button,
+.sell-button {
+    height: 400px;
+    width: 900px;
+    padding: 0;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.buy-button {
+    background-image: url('images\Buy.PNG');
+}
+
+.sell-button {
+    background-image: url('images\Sell.PNG');
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+
+    .buy-button,
+    .sell-button {
+        width: 48%;
+    }
+}
+
+.best-sellers {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 80px; /* Adjust this value to make the image lower on the Homepage */
+}
+
+.newsletter-section {
+    background-color: #ecf0f1;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px; /* Adjust this value to make the newsletter section lower on the Homepage */
+}
+
+/* contact page */
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form label,
+.contact-form input {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Sell page */
+body.sell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sell-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two columns: 1/3 for the image and 2/3 for the form */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.image-container {
+    max-width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.sell-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sell-form h2 {
+    margin-bottom: 20px;
+}
+
+.sell-form label,
+.sell-form input,
+.sell-form select,
+.sell-form textarea,
+.sell-form button {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Footer styles */
+.footer-wrapper {
+    position: relative;
+}
+
+footer {
+    background-color: #ecf0f1;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    margin-top: 1530px; /* Adjust this value to make the footer lower */
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.newsletter-form label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.newsletter-form input {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.newsletter-form button {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.newsletter-form button:hover {
+    background-color: #2980b9;
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 200px;
+}
+
+/* Buy page */
+body.buy {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.buy-page main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.buy-page .product {
+    height: 100%;
+}
+
+.buy-page .product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Login page */
+.login-register-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-form,
+.register-form {
+    width: 45%; /* Adjust the width as needed */
+}
+
+.login-register {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-register header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.login-register h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.login-register .header-buttons button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.login-register main {
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-register h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.login-register form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-register label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.login-register input {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-register button {
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-register button:hover {
+    background-color: #2980b9;
+}
+
+.login-register footer {
+    margin-top: 20px;
+    text-align: center;
+}
